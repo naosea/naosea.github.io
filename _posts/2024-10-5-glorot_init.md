@@ -1,3 +1,4 @@
+# Summary of Understanding the difficulty of training deep feedforward neural networks - Glorot, Bengio (2010)
 ## Introduction
 Before this contribution to the field there was significant difficulty in training neural networks with more than a few layers. Glorot and Bengio[^1] performed investigative experiments in monitoring activations and gradients across layers and throughout the training of deep networks, after which they proposed a new initialisation scheme, Glorot initialisation, which significantly improved training. Their analysis significantly contributed to the understanding of network training dynamics, and Glorot initialisation has since been widely adopted in the field.
 ## Analysis
