@@ -1,4 +1,4 @@
-# Summary of Understanding the difficulty of training deep feedforward neural networks - Glorot, Bengio (2010)
+# Summary: Understanding the difficulty of training deep feedforward neural networks - Glorot, Bengio (2010)
 ## Introduction
 Before this contribution to the field there was significant difficulty in training neural networks with more than a few layers. Glorot and Bengio[^1] performed investigative experiments in monitoring activations and gradients across layers and throughout the training of deep networks, after which they proposed a new initialisation scheme, Glorot initialisation, which significantly improved training. Their analysis significantly contributed to the understanding of network training dynamics, and Glorot initialisation has since been widely adopted in the field.
 ## Analysis
@@ -26,6 +26,7 @@ When $a = \frac{1}{\sqrt{n}}$, as in the previous standard weight initialisation
 $$nVar(W)=\frac{1}{3}$$
 
 As we want $nVar(W)=1$, we must set:
+
 $$a = \frac{\sqrt{3}}{\sqrt{n}}$$
 
 However, given the number of weights can differ between layers, and there is both a forwards and backwards pass, they suggest a compromise using the mean of the inputs and output of a layer:
@@ -43,7 +44,7 @@ Consistent distribution in the signals between layers shows excessive saturation
 ## Conclusion
 Glorot and Bengio performed experiments and analysis of the training of deep neural networks where they found saturated units were negatively impacting training. They hypothesised the root cause to be the variance of the gradients vanishing as they are backpropagated through the network, and then proposed a new initialisation scheme, Glorot initialisation, with the goal of keeping the variance of both gradients and activation values equal to $1$. Additional experiments provided evidence in support of their hypothesises as Glorot initialisation had maintained the variances of activations and gradients across layers and throughout training. 
 
-This contribution showed the power of monitoring the internal dynamics of neural networks, and Glorot initialisation became the standard scheme for initialising weights from a uniform distribution as it enabled the training of much deeper networks, and there have been extensions for weight initialisation from a normal distribution, along with He initialisation for ReLU activations[^2].
+This contribution showed the power of monitoring the internal dynamics of neural networks, and Glorot initialisation became the standard scheme for initialising weights from a uniform distribution as it enabled the training of much deeper networks, and there have been extensions for weight initialisation from a normal distribution, along with He initialisation[^2] for ReLU activations.
 
 [^1]: [Understanding the difficulty of training deep feedforward neural networks - Glorot, Bengio (2010)](https://proceedings.mlr.press/v9/glorot10a.html)
 [^2]: [Delving Deep into Rectifiers - He et al. (2015)](http://arxiv.org/abs/1502.01852)
